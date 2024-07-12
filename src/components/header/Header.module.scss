@@ -1,0 +1,12 @@
+@import '../../styles/functions';
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	padding: adapt(42px, 1920px) adapt(70px, 1920px) 0px;
+}

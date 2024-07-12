@@ -1,0 +1,68 @@
+@import '../../../styles/functions';
+
+// .wrapper_planet {
+// 	position: absolute;
+// 	top: adapt(-483px, 1920px);
+// 	right: adapt(-700px, 1920px);
+// 	z-index: 9;
+// 	background-image: url('/assets/images/earth/earth_planet.png');
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: contain;
+// 	width: adapt(1700px, 1920px);
+// 	height: adapt(1860px, 1920px);
+// }
+
+.wrapper_planet {
+	position: absolute;
+	top: adapt(-483px, 1920px);
+	right: adapt(-700px, 1920px);
+	z-index: 9;
+	width: adapt(1700px, 1920px);
+	height: adapt(1860px, 1920px);
+}
+
+.planet {
+	width: adapt(1700px, 1920px);
+	height: adapt(1860px, 1920px);
+	position: absolute;
+	top: adapt(0px, 1920px);
+	right: adapt(0px, 1920px);
+	z-index: 9;
+}
+
+.circle {
+	width: adapt(1540px, 1920px);
+	height: adapt(1544px, 1920px);
+	position: absolute;
+	z-index: 10;
+	top: adapt(240px, 1920px);
+	right: adapt(81px, 1920px);
+}
+
+.exp {
+	width: adapt(233px, 1920px);
+	height: adapt(101px, 1920px);
+	position: absolute;
+	top: adapt(716px, 1920px);
+	left: adapt(195px, 1920px);
+	z-index: 11;
+}
+
+.projects {
+	width: adapt(255px, 1920px);
+	height: adapt(110px, 1920px);
+	position: absolute;
+	top: adapt(900px, 1920px);
+	left: adapt(58px, 1920px);
+	z-index: 11;
+}
+
+.quality {
+	width: adapt(412px, 1920px);
+	height: adapt(214px, 1920px);
+	position: absolute;
+	top: adapt(1092px, 1920px);
+	left: adapt(230px, 1920px);
+	z-index: 11;
+}

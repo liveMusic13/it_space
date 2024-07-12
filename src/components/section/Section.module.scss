@@ -1,0 +1,136 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+@import '../../styles/fonts';
+
+.section {
+	// padding: adapt(42px, 1920px) adapt(70px, 1920px) adapt(40px, 1920px);
+	height: 100vh;
+	background-image: url('/assets/images/space/background.png');
+	position: relative;
+}
+
+.planet_img {
+	position: absolute;
+	z-index: 6;
+}
+
+.left {
+	top: 0;
+	left: 0;
+}
+
+.right {
+	bottom: 30%;
+	right: 1%;
+}
+
+.star_dust {
+	position: absolute;
+	z-index: 2;
+	top: adapt(-100px, 1920px);
+	right: adapt(-100px, 1920px);
+	width: adapt(2020px, 1920px);
+	height: adapt(1100px, 1920px);
+}
+
+.comet {
+	// width: adapt(1920px, 1920px);
+	// height: adapt(1080px, 1920px);
+	position: relative;
+	z-index: 5;
+	width: 100%;
+	height: 100%;
+}
+
+.block__title {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: adapt(460px, 1920px);
+	position: absolute;
+	z-index: 4;
+	top: 25%;
+	left: 0;
+	background-image: url('/assets/images/space/background_tittle.png');
+}
+
+.title__image {
+	position: absolute;
+	top: 26%;
+	left: 16.3%;
+	z-index: 6;
+	width: adapt(1282px, 1920px);
+	height: adapt(330px, 1920px);
+}
+
+.block__paragraph {
+	position: absolute;
+	top: 61%;
+	left: 29%;
+	z-index: 6;
+	display: flex;
+	align-items: center;
+	gap: adapt(40px, 1920px);
+
+	> .paragraph {
+		font-family: 'stolzl_medium';
+		font-size: 2.2rem;
+		text-transform: uppercase;
+	}
+
+	> .image__list {
+		width: adapt(24px, 1920px);
+		height: adapt(24px, 1920px);
+	}
+}
+
+.mini_comet_blue {
+	position: absolute;
+	z-index: 5;
+	bottom: adapt(80px, 1920px);
+	right: 0;
+}
+
+.mini_comet_red {
+	position: absolute;
+	z-index: 5;
+	bottom: adapt(80px, 1920px);
+	right: 0;
+}
+
+.stars {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	background-image: url('/assets/images/space/stars.png');
+}
+
+// .psevdo__interface {
+// 	position: absolute;
+// 	z-index: 6;
+// 	bottom: adapt(40px, 1920px);
+// 	left: adapt(145px, 1920px);
+// 	border-radius: adapt(110px, 1920px);
+// 	// width: adapt(1590.38px, 1920px);
+// 	// height: adapt(64.78px, 1920px);
+// 	background-color: rgba($color: $color_white, $alpha: 0.1);
+// 	backdrop-filter: blur(6px);
+
+// 	width: adapt(1628px, 1920px);
+// 	height: adapt(64.78px, 1920px);
+// 	// padding: adapt(17px, 1920px) adapt(50px, 1920px);
+// }
+
+.shadow__about {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 6;
+	width: adapt(950px, 1920px);
+	height: 100%;
+	backdrop-filter: blur(5px);
+	background-color: rgba($color: $color_white, $alpha: 0.1);
+}
