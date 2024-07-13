@@ -22,7 +22,7 @@ const About = ({ isAnim, animAbout }) => {
 			className={styles.block__about}
 			initial={isAnim(animAbout, 'initial')}
 			animate={isAnim(animAbout, 'animate')}
-			transition={{ duration: 2, ease: 'easeOut' }}
+			transition={isAnim(animAbout, 'transition')}
 		>
 			<div className={styles.block__border}></div>
 			<div className={styles.block__content}>

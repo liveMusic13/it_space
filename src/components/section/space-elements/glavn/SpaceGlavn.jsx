@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 import styles from './SpaceGlavn.module.scss';
 
-const SpaceGlavn = ({ viewSection, isAnimGlavn }) => {
-	// const isAnim = isAnimGlavn;
+const SpaceGlavn = ({ isAnimGlavn, animProjects }) => {
+	useEffect(() => {
+		console.log(animProjects);
+	}, [animProjects.size_on]);
 
-	// console.log(isAnim);
-
-	const isAnim = (isAnimGlavn, forAnim, forObject) => {
+	const isAnim = (isAnimGlavn, forAnim, forObject, animProjects) => {
 		if (forObject === 'left') {
 			if (forAnim === 'initial') {
 				return { top: 0, left: 0 };
@@ -15,9 +16,25 @@ const SpaceGlavn = ({ viewSection, isAnimGlavn }) => {
 			}
 		} else if (forObject === 'right') {
 			if (forAnim === 'initial') {
-				return { bottom: '24.4%', right: '1%' };
+				return {
+					bottom: '24.4%',
+					right: '1%',
+					transform: animProjects.size_on ? 'scale(1.28)' : 'scale(1)',
+				};
 			} else if (forAnim === 'animate') {
-				return isAnimGlavn ? { top: '5.5%', right: '1%' } : {};
+				return animProjects.size_on
+					? {
+							top: '-5.5%',
+							right: '-12%',
+							transform: animProjects.size_on ? 'scale(1.28)' : 'scale(1)',
+					  }
+					: isAnimGlavn
+					? {
+							top: '5.5%',
+							right: '1%',
+							transform: animProjects.size_on ? 'scale(1.28)' : 'scale(1)',
+					  }
+					: {};
 			}
 		} else if (forObject === 'comet') {
 			if (forAnim === 'initial') {
@@ -46,6 +63,42 @@ const SpaceGlavn = ({ viewSection, isAnimGlavn }) => {
 		}
 	};
 
+	const isAnimMiniComet = (animProjects, forAnim, forObject) => {
+		if (forObject === 'mini_comet_blue') {
+			if (forAnim === 'initial') {
+				return {
+					transform: 'scale(1)',
+					right: 'calc(0/1920*100vw)',
+					bottom: 'calc(80/1920*100vw)',
+				};
+			} else if (forAnim === 'animate') {
+				return animProjects.size_on
+					? {
+							transform: 'scale(1.28)',
+							right: 'calc(-200/1920*100vw)',
+							bottom: 'calc(0/1920*100vw)',
+					  }
+					: {};
+			}
+		} else if (forObject === 'mini_comet_red') {
+			if (forAnim === 'initial') {
+				return {
+					transform: 'scale(1)',
+					right: 'calc(0/1920*100vw)',
+					bottom: 'calc(80/1920*100vw)',
+				};
+			} else if (forAnim === 'animate') {
+				return animProjects.size_on
+					? {
+							transform: 'scale(1.28)',
+							right: 'calc(-170/1920*100vw)',
+							bottom: 'calc(-45/1920*100vw)',
+					  }
+					: {};
+			}
+		}
+	};
+
 	return (
 		<>
 			<motion.img
@@ -60,8 +113,8 @@ const SpaceGlavn = ({ viewSection, isAnimGlavn }) => {
 				className={`${styles.planet_img} ${styles.right}`}
 				src='/assets/images/space/right_planet.png'
 				alt='planet'
-				initial={isAnim(isAnimGlavn, 'initial', 'right')}
-				animate={isAnim(isAnimGlavn, 'animate', 'right')}
+				initial={isAnim(isAnimGlavn, 'initial', 'right', animProjects)}
+				animate={isAnim(isAnimGlavn, 'animate', 'right', animProjects)}
 				transition={{ duration: 2 }}
 			/>
 			<motion.img
@@ -72,15 +125,21 @@ const SpaceGlavn = ({ viewSection, isAnimGlavn }) => {
 				animate={isAnim(isAnimGlavn, 'animate', 'comet')}
 				transition={{ duration: 2 }}
 			/>
-			<img
+			<motion.img
 				className={styles.mini_comet_blue}
 				src='/assets/images/space/mini_comet_blue.png'
 				alt='mini_comet_blue'
+				initial={isAnimMiniComet(animProjects, 'initial', 'mini_comet_blue')}
+				animate={isAnimMiniComet(animProjects, 'animate', 'mini_comet_blue')}
+				transition={{ duration: 2 }}
 			/>
-			<img
+			<motion.img
 				className={styles.mini_comet_red}
 				src='/assets/images/space/mini_comet_red.png'
 				alt='mini_comet_red'
+				initial={isAnimMiniComet(animProjects, 'initial', 'mini_comet_red')}
+				animate={isAnimMiniComet(animProjects, 'animate', 'mini_comet_red')}
+				transition={{ duration: 2 }}
 			/>
 			<motion.div
 				className={styles.block__title}

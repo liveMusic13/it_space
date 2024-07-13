@@ -1,10 +1,14 @@
 import Button from '../ui/button/Button';
 import styles from './Header.module.scss';
 
-const Header = () => {
+const Header = ({ viewSection }) => {
+	const srcImage =
+		viewSection === 5
+			? '/assets/images/logo_black.svg'
+			: '/assets/images/logo_white.svg';
 	return (
 		<header className={styles.header}>
-			<img src='/assets/images/logo_white.svg' alt='logo' />
+			<img src={srcImage} alt='logo' />
 			<Button />
 		</header>
 	);

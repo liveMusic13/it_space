@@ -129,9 +129,15 @@ const Planet = ({ viewSection, animAbout }) => {
 				};
 			if (animAbout.off)
 				return {
-					top: '250vh',
-					right: 'calc(-700/1920*100vw)',
+					top: 'calc(-483/1920*100vw)',
+					left: '-100vw',
 				};
+		} else if (forAnim === 'transition') {
+			if (animAbout.off) {
+				return { duration: 3.5, ease: 'easeOut' };
+			} else {
+				return { duration: 2, ease: 'easeOut' };
+			}
 		}
 	};
 
@@ -175,7 +181,7 @@ const Planet = ({ viewSection, animAbout }) => {
 			className={styles.wrapper_planet}
 			initial={isAnimView(animAbout, 'initial')}
 			animate={isAnimView(animAbout, 'animate')}
-			transition={{ duration: 2, ease: 'easeOut' }}
+			transition={isAnimView(animAbout, 'transition')}
 		>
 			<motion.img
 				className={styles.planet}

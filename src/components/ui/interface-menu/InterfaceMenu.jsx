@@ -1,7 +1,10 @@
+import { motion } from 'framer-motion';
 import { arrayInterface } from '../../../data/interface.data';
+import IconInterface from '../icon_interface/IconInterface';
 import styles from './InterfaceMenu.module.scss';
 
-const InterfaceMenu = ({ shadow, setViewSection }) => {
+const InterfaceMenu = ({ shadow, setViewSection, viewSection }) => {
+	console.log(viewSection);
 	const styleObj = {
 		opacity: shadow ? { opacity: '0' } : undefined,
 		backdropFilter: shadow
@@ -13,8 +16,27 @@ const InterfaceMenu = ({ shadow, setViewSection }) => {
 			: undefined,
 	};
 
+	const isAnim = (viewSection, forAnim) => {
+		if (forAnim === 'initial') {
+			return {};
+		} else if (forAnim === 'animate') {
+			if (viewSection === 4 || viewSection === 5) {
+				return {
+					backgroundColor: 'rgba(0, 0, 0, 0.1)',
+					color: '#000',
+				};
+			}
+		}
+	};
+
 	return (
-		<ul className={styles.block__interface} style={styleObj.backdropFilter}>
+		<motion.ul
+			className={styles.block__interface}
+			style={styleObj.backdropFilter}
+			initial={isAnim(viewSection, 'initial')}
+			animate={isAnim(viewSection, 'animate')}
+			transition={{ duration: 2 }}
+		>
 			{arrayInterface.map(list => (
 				<li key={list.id} className={styles.list} style={styleObj.opacity}>
 					<span className={styles.number} style={styleObj.opacity}>
@@ -28,16 +50,11 @@ const InterfaceMenu = ({ shadow, setViewSection }) => {
 						\{list.title}
 					</span>
 					{list.id !== arrayInterface.length && (
-						<img
-							className={styles.image}
-							src='/assets/images/icons/list_interface_white.svg'
-							alt='list'
-							style={styleObj.opacity}
-						/>
+						<IconInterface styleObj={styleObj} viewSection={viewSection} />
 					)}
 				</li>
 			))}
-		</ul>
+		</motion.ul>
 	);
 };
 

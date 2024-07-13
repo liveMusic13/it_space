@@ -1,0 +1,78 @@
+@import '../../../styles/functions';
+@import '../../../styles/fonts';
+
+.block__projects {
+	position: absolute;
+	// top: 0;
+	left: adapt(70px, 1920px);
+	z-index: 9;
+}
+
+.title__image {
+	width: adapt(1396px, 1920px);
+	height: adapt(330px, 1920px);
+	margin-top: adapt(81px, 1920px);
+	margin-left: adapt(190px, 1920px);
+}
+
+.icon__title {
+	width: adapt(110px, 1920px);
+	height: adapt(50px, 1920px);
+	background-color: rgba($color: #000000, $alpha: 0.15);
+	margin-bottom: adapt(21px, 1920px);
+}
+
+.block__links {
+	display: flex;
+	gap: adapt(20px, 1920px);
+	position: absolute;
+	top: adapt(314px, 1920px);
+	// top: adapt(235px, 1920px);
+	left: 0;
+}
+
+.block__project {
+	width: adapt(430px, 1920px);
+	height: adapt(500px, 1920px);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	padding: adapt(40px, 1920px);
+}
+
+.arrow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: adapt(70px, 1920px);
+	height: adapt(70px, 1920px);
+	background-image: url('/assets/images/icons/arrow_top_right.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	&:hover {
+		background-image: url('/assets/images/icons/arrow_top_right_hover.svg');
+	}
+
+	> img {
+		width: adapt(28px, 1920px);
+		height: adapt(28px, 1920px);
+		position: absolute;
+		top: 10%;
+		right: 10%;
+	}
+}
+
+.title {
+	margin-bottom: adapt(154px, 1920px);
+	font-size: 2.44rem;
+	font-family: 'Stolzl-Book';
+	text-transform: uppercase;
+}
+
+.description {
+	font-family: 'Stolzl-Book';
+	font-size: 1rem;
+}

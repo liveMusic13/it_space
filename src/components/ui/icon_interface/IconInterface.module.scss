@@ -1,0 +1,7 @@
+@import '../../../styles/functions';
+
+.image {
+	margin-left: adapt(60px, 1920px);
+	width: adapt(24px, 1920px);
+	height: adapt(24px, 1920px);
+}

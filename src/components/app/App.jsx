@@ -11,7 +11,7 @@ const App = () => {
 
 	return (
 		<div className={styles.wrapper}>
-			<Header />
+			<Header viewSection={viewSection} />
 			{/* {arraySection.map(section => {
 
 				if (section.id === 0 || section.id === 1 || section.id === 2) {
@@ -30,8 +30,16 @@ const App = () => {
 
 			<Section viewSection={viewSection} setViewSection={setViewSection} />
 
-			<InterfaceMenu shadow={false} setViewSection={setViewSection} />
-			<InterfaceMenu shadow={true} setViewSection={setViewSection} />
+			<InterfaceMenu
+				shadow={false}
+				setViewSection={setViewSection}
+				viewSection={viewSection}
+			/>
+			<InterfaceMenu
+				shadow={true}
+				setViewSection={setViewSection}
+				viewSection={viewSection}
+			/>
 		</div>
 	);
 };
