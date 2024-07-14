@@ -35,6 +35,7 @@ const App = () => {
 
 	const [isScale, setIsScale] = useState(false);
 	const [isScaleProjects, setIsScaleProjects] = useState(false);
+	const [isViewContainer, setIsViewContainer] = useState(false);
 
 	return (
 		<div className={styles.wrapper}>
@@ -60,6 +61,8 @@ const App = () => {
 					setIsScale,
 					isScaleProjects,
 					setIsScaleProjects,
+					isViewContainer,
+					setIsViewContainer,
 				}}
 			/>
 
@@ -84,6 +87,8 @@ const App = () => {
 					setIsScale,
 					isScaleProjects,
 					setIsScaleProjects,
+					isViewContainer,
+					setIsViewContainer,
 				}}
 			/>
 			<InterfaceMenu
@@ -103,6 +108,12 @@ const App = () => {
 					setAnimAbout,
 					isAnimGlavn,
 					setIsAnimGlavn,
+					isScale,
+					setIsScale,
+					isScaleProjects,
+					setIsScaleProjects,
+					isViewContainer,
+					setIsViewContainer,
 				}}
 			/>
 		</div>

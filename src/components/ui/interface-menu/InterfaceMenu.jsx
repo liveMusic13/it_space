@@ -22,6 +22,8 @@ const InterfaceMenu = ({ shadow, setViewSection, viewSection, states }) => {
 		setIsScale,
 		isScaleProjects,
 		setIsScaleProjects,
+		isViewContainer,
+		setIsViewContainer,
 	} = states;
 
 	const styleObj = {
@@ -69,6 +71,19 @@ const InterfaceMenu = ({ shadow, setViewSection, viewSection, states }) => {
 			setIsScale(true);
 			setViewSection(3);
 		} else if (id === 3) {
+			setIsAnimGlavn(true);
+			setAnimAbout(prev => ({ ...prev, on: false }));
+			setAnimCareer(prev => ({ ...prev, on: false }));
+			setAnimProjects({
+				on: false,
+				off: false,
+				size_on: false,
+				size_off: false,
+			});
+			setAnimServices({ on: true, off: false });
+			setAnimContacts({ on: false, off: false });
+			setIsScale(false);
+			setIsViewContainer(true);
 			setViewSection(6);
 		} else if (id === 4) {
 			setViewSection(8);

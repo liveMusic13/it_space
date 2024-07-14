@@ -256,6 +256,8 @@ const Section = ({ viewSection, setViewSection, states }) => {
 		setIsScale,
 		isScaleProjects,
 		setIsScaleProjects,
+		isViewContainer,
+		setIsViewContainer,
 	} = states;
 
 	const styleAnim = viewSection => {
@@ -404,7 +406,6 @@ const Section = ({ viewSection, setViewSection, states }) => {
 			></motion.div>
 			<motion.div
 				className={styles.section__container}
-				style={isScale ? { transform: 'scale(1)' } : {}}
 				initial={
 					viewSection === 10
 						? test(viewSection, 'initial')
@@ -416,6 +417,13 @@ const Section = ({ viewSection, setViewSection, states }) => {
 						: isAnimContainer(animProjects, 'animate')
 				}
 				transition={{ duration: 2 }}
+				style={
+					isScale
+						? { transform: 'scale(1)' }
+						: isViewContainer
+						? { top: '-100vh' }
+						: {}
+				}
 			>
 				<div className={styles.stars}></div>
 				<motion.img
