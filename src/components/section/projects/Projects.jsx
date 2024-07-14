@@ -2,7 +2,12 @@ import { motion } from 'framer-motion';
 import { arrayProjects } from '../../../data/project.data';
 import styles from './Projects.module.scss';
 
-const Projects = ({ animProjects }) => {
+const Projects = ({
+	animProjects,
+	viewSection,
+	isScaleProjects,
+	setIsScaleProjects,
+}) => {
 	const isAnim = (animProjects, forAnim) => {
 		if (forAnim === 'initial') {
 			return { top: 0, transform: 'translateX(200vw)' };
@@ -55,7 +60,7 @@ const Projects = ({ animProjects }) => {
 			className={styles.block__projects}
 			initial={isAnim(animProjects, 'initial')}
 			animate={isAnim(animProjects, 'animate')}
-			transition={{ duration: 2 }}
+			transition={viewSection === 0 ? { duration: 0.1 } : { duration: 2 }}
 		>
 			<motion.img
 				className={styles.title__image}
@@ -64,12 +69,14 @@ const Projects = ({ animProjects }) => {
 				initial={isAnimSize(animProjects, 'initial', 'title__image')}
 				animate={isAnimSize(animProjects, 'animate', 'title__image')}
 				transition={{ duration: 2 }}
+				style={isScaleProjects ? { transform: 'scale(1)' } : {}}
 			/>
 			<motion.div
 				className={styles.block__links}
 				initial={isAnimSize(animProjects, 'initial', 'block__links')}
 				animate={isAnimSize(animProjects, 'animate', 'block__links')}
 				transition={{ duration: 2 }}
+				style={isScaleProjects ? { transform: 'scale(1)' } : {}}
 			>
 				{arrayProjects.map(project => (
 					<div

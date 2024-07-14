@@ -1,12 +1,7 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
 import styles from './SpaceGlavn.module.scss';
 
 const SpaceGlavn = ({ isAnimGlavn, animProjects }) => {
-	useEffect(() => {
-		console.log(animProjects);
-	}, [animProjects.size_on]);
-
 	const isAnim = (isAnimGlavn, forAnim, forObject, animProjects) => {
 		if (forObject === 'left') {
 			if (forAnim === 'initial') {

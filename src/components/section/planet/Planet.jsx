@@ -1,113 +1,3 @@
-// import { motion } from 'framer-motion';
-// import { useEffect, useState } from 'react';
-// import styles from './Planet.module.scss';
-
-// const Planet = ({ viewSection }) => {
-// 	const [isStartPlanet, setIsStartPlanet] = useState(false);
-
-// 	const isAnim = viewSection === 1;
-
-// 	useEffect(() => {
-// 		if (isAnim) {
-// 			const timeouid = setTimeout(() => {
-// 				setIsStartPlanet(true);
-// 			}, 2000);
-
-// 			return () => clearTimeout(timeouid);
-// 		} else {
-// 			setIsStartPlanet(false);
-// 		}
-// 	}, [viewSection]);
-
-// 	const initAnim = () => {
-// 		if (!isStartPlanet && isAnim) {
-// 			return {
-// 				top: 'calc(-483/1920*100vw)',
-// 				right: 'calc(-700/1920*100vw)',
-// 			};
-// 		} else if (isStartPlanet && isAnim) {
-// 			return {
-// 				rotate: -10,
-// 				x: 'calc(-18/1920*100vw)',
-// 			};
-// 		}
-// 	};
-
-// 	const initInitial = () => {
-// 		if (!isStartPlanet && isAnim) {
-// 			return {
-// 				top: '-100vh',
-// 				right: 'calc(-700/1920*100vw)',
-// 			};
-// 		} else if (isStartPlanet && isAnim) {
-// 			return {};
-// 		}
-// 	};
-
-// 	const initTransition = () => {
-// 		if (!isStartPlanet && isAnim) {
-// 			return { duration: 2 };
-// 		} else if (isStartPlanet && isAnim) {
-// 			return { duration: 10 };
-// 		}
-// 	};
-
-// 	return (
-// 		<motion.div
-// 			className={styles.wrapper_planet}
-// 			initial={{
-// 				top: '250vh',
-// 				right: 'calc(-700/1920*100vw)',
-// 			}}
-// 			animate={{
-// 				top: 'calc(-483/1920*100vw)',
-// 				right: 'calc(-700/1920*100vw)',
-// 			}}
-// 			transition={{ duration: 2 }}
-// 		>
-// 			<motion.img
-// 				className={styles.planet}
-// 				src='/assets/images/earth/earth_planet.png'
-// 				alt='planet'
-// 				animate={{
-// 					rotate: -10,
-// 					x: 'calc(-18/1920*100vw)',
-// 				}}
-// 				transition={{ duration: 10 }}
-// 				// initial={initInitial()}
-// 				// animate={initAnim()}
-// 				// transition={initTransition()}
-// 			/>
-// 			<motion.img
-// 				className={styles.circle}
-// 				src='/assets/images/earth/circle.png'
-// 				alt='circle'
-// 				animate={{
-// 					rotate: 12,
-// 				}}
-// 				transition={{ duration: 10 }}
-// 			/>
-// 			<img
-// 				className={styles.exp}
-// 				src='/assets/images/earth/exp.png'
-// 				alt='exp'
-// 			/>
-// 			<img
-// 				className={styles.projects}
-// 				src='/assets/images/earth/projects.png'
-// 				alt='projects'
-// 			/>
-// 			<img
-// 				className={styles.quality}
-// 				src='/assets/images/earth/quality.png'
-// 				alt='quality'
-// 			/>
-// 		</motion.div>
-// 	);
-// };
-
-// export default Planet;
-
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import styles from './Planet.module.scss';
@@ -168,13 +58,13 @@ const Planet = ({ viewSection, animAbout }) => {
 		if (animAbout.on) {
 			const timeouid = setTimeout(() => {
 				setIsStartPlanet(true);
-			}, 5000);
+			}, 3000);
 
 			return () => clearTimeout(timeouid);
 		} else {
 			setIsStartPlanet(false);
 		}
-	}, [viewSection]);
+	}, [viewSection, animAbout.on]);
 
 	return (
 		<motion.div

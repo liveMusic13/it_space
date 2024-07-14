@@ -3,9 +3,23 @@ import { arrayVacancies } from '../../../data/career.data';
 import Button from '../../ui/button/Button';
 import styles from './Career.module.scss';
 
-const Career = () => {
+const Career = ({ animCareer }) => {
+	const isAnim = (animCareer, forAnim) => {
+		if (forAnim === 'initial') {
+			return { top: '-100vh', left: 0 };
+		} else if (forAnim === 'animate') {
+			if (animCareer.on) return { top: '13%', left: 'calc(70/1920*100vw)' };
+			// if (animContacts.off) return { top: 0, left: '-100vw' };
+		}
+	};
+
 	return (
-		<motion.div className={styles.block__career}>
+		<motion.div
+			className={styles.block__career}
+			initial={isAnim(animCareer, 'initial')}
+			animate={isAnim(animCareer, 'animate')}
+			transition={{ duration: 2 }}
+		>
 			{arrayVacancies.map(vacancies => (
 				<div key={vacancies.id} className={styles.vacancies}>
 					<div className={styles.block__one}>

@@ -26,6 +26,27 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: $color_white;
+
+	> .text {
+		margin-top: adapt(5px, 1920px);
+		font-family: 'stolzl_medium';
+		font-size: 0.88rem;
+		text-transform: uppercase;
+	}
+
+	> .number {
+		font-family: 'Neopixel';
+		font-size: 1.55rem;
+		line-height: 1.71rem;
+	}
+}
+.list_two {
+	position: absolute;
+	top: 26%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	> .text {
 		margin-top: adapt(5px, 1920px);
@@ -45,4 +66,30 @@
 	margin-left: adapt(60px, 1920px);
 	width: adapt(24px, 1920px);
 	height: adapt(24px, 1920px);
+}
+
+.block__arrow {
+	position: absolute;
+	z-index: 10;
+	width: adapt(139px, 1920px);
+	height: adapt(7.06px, 1920px);
+	top: 0%;
+	opacity: 0;
+	background-image: url('/assets/images/icons/interface_arrow_sun.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.block__arrow_two {
+	position: absolute;
+	z-index: 10;
+	width: adapt(139px, 1920px);
+	height: adapt(7.06px, 1920px);
+	top: 0%;
+	opacity: 0;
+	background-image: url('/assets/images/icons/interface_arrow_moon.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 }
