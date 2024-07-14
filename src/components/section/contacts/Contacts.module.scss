@@ -1,0 +1,229 @@
+@import '../../../styles/variables';
+@import '../../../styles/functions';
+@import '../../../styles/fonts';
+
+.wrapper_contact {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 3;
+	color: $color_black;
+	// background-image: url('/assets/images/background_contacts.jpg');
+	// background-repeat: no-repeat;
+	// background-position: center;
+	// background-size: cover;
+	background-color: transparent;
+	width: adapt(1920px, 1920px);
+	height: adapt(1000px, 1920px);
+	overflow-y: scroll;
+}
+
+.comet {
+	position: absolute;
+	top: -59%;
+	left: 0;
+}
+
+.title__image {
+	position: absolute;
+	top: adapt(117.41px, 1920px);
+	left: adapt(737.66px, 1920px);
+	width: adapt(445px, 1920px);
+	height: adapt(92px, 1920px);
+}
+
+.block__content {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: adapt(260px, 1920px);
+	left: 0;
+	z-index: 3;
+}
+
+.block__map {
+	background-image: url('/assets/images/map.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: adapt(1250px, 1920px);
+	height: adapt(588px, 1920px);
+	padding: adapt(40px, 1920px) adapt(70px, 1920px);
+}
+
+.block__contacts {
+	background-image: url('/assets/images/backgroundContacts.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: adapt(430px, 1920px);
+	height: adapt(500px, 1920px);
+	padding: adapt(50px, 1920px);
+	display: flex;
+	flex-direction: column;
+	gap: adapt(40px, 1920px);
+}
+
+.contact {
+}
+
+.block__title {
+	margin-bottom: adapt(15px, 1920px);
+	display: flex;
+	align-items: center;
+	gap: adapt(10px, 1920px);
+}
+
+.title {
+	font-size: 1rem;
+	font-family: 'Neopixel';
+	background: linear-gradient(
+		90deg,
+		rgb(255, 255, 255) 40%,
+		rgb(36, 122, 252) 100%
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.description {
+	font-family: 'Stolzl-Book';
+	font-size: 1rem;
+	color: $color_white;
+}
+
+.block__form {
+	display: flex;
+	flex-direction: column;
+	gap: adapt(25px, 1920px);
+	background-image: url('/assets/images/bg_form.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: adapt(650px, 1920px);
+	height: adapt(588px, 1920px);
+	padding: adapt(45px, 1920px) adapt(70px, 1920px) adapt(45px, 1920px)
+		adapt(50px, 1920px);
+}
+
+.form__title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	> .title {
+		font-family: 'Neopixel';
+		font-size: 1.55rem;
+		color: $color_white;
+	}
+
+	> .socials {
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: adapt(10px, 1920px);
+
+	> .block__input {
+		position: relative;
+		color: $color_white;
+		background-image: url('/assets/images/block_background_2.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: adapt(530px, 1920px);
+		height: adapt(80px, 1920px);
+		display: flex;
+		flex-direction: column;
+		gap: adapt(10px, 1920px);
+		padding: adapt(15px, 1920px) adapt(20px, 1920px);
+
+		&:hover {
+			background-image: url('/assets/images/block_background_2_hover.png');
+		}
+
+		> label {
+			font-family: 'Neopixel';
+			font-size: 0.88rem;
+		}
+		> input {
+			font-family: 'stolzl_regular';
+			font-size: 1rem;
+			width: adapt(270px, 1920px);
+			height: adapt(29px, 1920px);
+			background-color: rgba($color: $color_white, $alpha: 0.1);
+			outline: none;
+			color: $color_white;
+		}
+
+		> .block__select {
+			font-family: 'stolzl_regular';
+			font-size: 1rem;
+			// width: adapt(270px, 1920px);
+			width: 100%;
+			height: adapt(29px, 1920px);
+			background-color: rgba($color: $color_white, $alpha: 0.1);
+			color: rgba($color: $color_white, $alpha: 0.3);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			> .target__option {
+			}
+			> .button__option {
+				width: adapt(24px, 1920px);
+				height: adapt(24px, 1920px);
+				background-color: transparent;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				> img {
+					width: adapt(24px, 1920px);
+					height: adapt(24px, 1920px);
+				}
+			}
+		}
+	}
+}
+
+.list__option {
+	position: absolute;
+	bottom: adapt(-60px, 1920px);
+	left: 0;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	gap: adapt(10px, 1920px);
+	padding: adapt(15px, 1920px);
+	background-color: rgba($color: #000000, $alpha: 1);
+
+	> .option {
+		font-size: 1rem;
+		font-family: 'stolzl_regular';
+	}
+}
+
+.block__button {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	> .text {
+		font-family: 'Neopixel';
+		font-size: 0.88rem;
+		color: $color_grey;
+		max-width: adapt(237px, 1920px);
+
+		> span {
+			color: $color_white;
+		}
+	}
+}

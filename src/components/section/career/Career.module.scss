@@ -1,0 +1,79 @@
+@import '../../../styles/variables';
+@import '../../../styles/functions';
+@import '../../../styles/fonts';
+
+.block__career {
+	position: absolute;
+	top: 13%;
+	left: adapt(70px, 1920px);
+	z-index: 3;
+	width: adapt(1780px, 1920px);
+	height: adapt(746px, 1920px);
+	display: flex;
+	flex-direction: column;
+	gap: adapt(30px, 1920px);
+}
+
+.vacancies {
+	width: 100%;
+	height: adapt(343px, 1920px);
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.block__one {
+	max-width: adapt(756px, 1920px);
+
+	> .title {
+		font-family: 'Neopixel';
+		font-size: 4.66rem;
+		color: $color_black;
+		margin-bottom: adapt(40px, 1920px);
+	}
+
+	> .menu {
+		display: flex;
+		flex-wrap: wrap;
+		gap: adapt(60px, 1920px);
+
+		> .list {
+			font-family: 'Neopixel';
+			color: $color_black;
+			font-size: 1.55rem;
+
+			> img {
+				width: adapt(28px, 1920px);
+				height: adapt(28px, 1920px);
+				margin-right: adapt(21px, 1920px);
+			}
+		}
+	}
+}
+
+.block__two {
+	font-family: 'Stolzl-Book';
+	max-width: adapt(580px, 1920px);
+
+	> .price {
+		font-size: 2.44rem;
+		color: $color_black;
+		margin-bottom: adapt(27px, 1920px);
+	}
+	> .description {
+		font-size: 1rem;
+		color: $color_grey;
+	}
+}
+
+.block__dotted {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-image: url('/assets/images/bg_dotted.png');
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 4px;
+}

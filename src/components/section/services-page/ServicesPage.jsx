@@ -82,10 +82,7 @@ const ServicesPage = ({ animServices }) => {
 										list.id === 4 ? { marginLeft: 'calc(75/1920*100vw)' } : {}
 									}
 								>
-									<img
-										src='/public/assets/images/icons/list_menu.svg'
-										alt='list'
-									/>
+									<img src='/assets/images/icons/list_menu.svg' alt='list' />
 									{list.title}
 								</li>
 							))}

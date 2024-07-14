@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import About from './about/About';
+import Contacts from './contacts/Contacts';
 import Planet from './planet/Planet';
 import Projects from './projects/Projects';
 import styles from './Section.module.scss';
 import ServicesPage from './services-page/ServicesPage';
 import SpaceGlavn from './space-elements/glavn/SpaceGlavn';
+import Career from './career/Career';
 
 const Section = ({ viewSection, setViewSection }) => {
 	const [isAnimGlavn, setIsAnimGlavn] = useState(false);
@@ -76,14 +78,17 @@ const Section = ({ viewSection, setViewSection }) => {
 			// 	size_off: false,
 			// }));
 			// setAnimSpace(prev => ({ ...prev, on: true }));
+			setAnimContacts(prev => ({ ...prev, on: true }));
+		} else if (viewSection === 9) {
+			setAnimContacts({ on: false, off: true });
 		}
 	}, [viewSection]);
 
 	const moveSection = setViewSection => {
-		if (viewSection < 9) {
+		if (viewSection < 14) {
 			setViewSection(prev => prev + 1);
 		} else {
-			if (viewSection === 10) {
+			if (viewSection === 15) {
 				setIsAnimGlavn(false);
 			}
 			setViewSection(0);
@@ -131,11 +136,42 @@ const Section = ({ viewSection, setViewSection }) => {
 		}
 	};
 
+	const isAnimBG = (animContacts, forAnim) => {
+		if (forAnim === 'initial') {
+			if (animContacts.off) {
+				return {
+					opacity: 1,
+				};
+			} else {
+				return {
+					opacity: 0,
+				};
+			}
+		} else if (forAnim === 'animate') {
+			if (animContacts.on) {
+				return {
+					opacity: 1,
+				};
+			}
+			if (animContacts.off) {
+				return {
+					opacity: 0,
+				};
+			}
+		}
+	};
+
 	return (
 		<section
 			className={styles.section}
 			onClick={() => moveSection(setViewSection)}
 		>
+			<motion.div
+				className={styles.bg_for_contacts}
+				initial={isAnimBG(animContacts, 'initial')}
+				animate={isAnimBG(animContacts, 'animate')}
+				transition={{ duration: 2 }}
+			></motion.div>
 			<motion.div
 				className={styles.section__container}
 				initial={isAnimContainer(animProjects, 'initial')}
@@ -176,6 +212,8 @@ const Section = ({ viewSection, setViewSection }) => {
 				<Projects animProjects={animProjects} />
 			</motion.div>
 			<ServicesPage animServices={animServices} />
+			<Contacts animContacts={animContacts} />
+			<Career />
 		</section>
 	);
 };

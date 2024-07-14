@@ -20,7 +20,7 @@ const InterfaceMenu = ({ shadow, setViewSection, viewSection }) => {
 		if (forAnim === 'initial') {
 			return {};
 		} else if (forAnim === 'animate') {
-			if (viewSection === 4 || viewSection === 5) {
+			if (viewSection === 4 || viewSection === 5 || viewSection === 9) {
 				return {
 					backgroundColor: 'rgba(0, 0, 0, 0.1)',
 					color: '#000',

@@ -12,21 +12,6 @@ const App = () => {
 	return (
 		<div className={styles.wrapper}>
 			<Header viewSection={viewSection} />
-			{/* {arraySection.map(section => {
-
-				if (section.id === 0 || section.id === 1 || section.id === 2) {
-				return (
-					<Section
-					key={section.id}
-					title={section.title}
-					section={section}
-					viewSection={viewSection}
-					setViewSection={setViewSection}
-					/>
-				)
-			}
-			}
-			)} */}
 
 			<Section viewSection={viewSection} setViewSection={setViewSection} />
 

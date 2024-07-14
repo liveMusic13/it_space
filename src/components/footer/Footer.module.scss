@@ -1,0 +1,56 @@
+@import '../../styles/variables';
+@import '../../styles/functions';
+@import '../../styles/fonts';
+
+.footer {
+	background-image: url('/assets/images/bg_footer.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: adapt(179px, 1920px);
+	position: absolute;
+	left: 0;
+	bottom: adapt(-179px, 1920px);
+	padding: adapt(30px, 1920px) adapt(70px, 1920px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	width: adapt(197px, 1920px);
+	height: adapt(99px, 1920px);
+}
+
+.block__mail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: adapt(26px, 1920px);
+
+	> .list {
+		width: adapt(24px, 1920px);
+		height: adapt(24px, 1920px);
+	}
+	> .mail {
+		font-family: 'stolzl_medium';
+		font-size: 0.88rem;
+		color: $color_black;
+	}
+}
+
+.text {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	gap: adapt(20px, 1920px);
+
+	> p {
+		font-family: 'stolzl_regular';
+		font-size: 0.88rem;
+		color: $color_grey;
+	}
+}

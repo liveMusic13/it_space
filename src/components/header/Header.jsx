@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 
 const Header = ({ viewSection }) => {
 	const srcImage =
-		viewSection === 5
+		viewSection === 5 || viewSection === 9
 			? '/assets/images/logo_black.svg'
 			: '/assets/images/logo_white.svg';
 	return (
