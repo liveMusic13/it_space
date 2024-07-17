@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import { useSectionsAnim } from '../../hooks/useSectionsAnim';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 import AbAndPlanMobile from './ab-and-plan-mobile/AbAndPlanMobile';
@@ -137,12 +138,33 @@ const Section = ({ viewSection, setViewSection, states }) => {
 		}
 	};
 
+	///
+	const handleSwipeLeft = () => {
+		if (width <= 767.98) {
+			if (viewSection === 99) {
+				setViewSection(100);
+			} else if (viewSection === 1) {
+				setViewSection(99);
+			} else if (viewSection < 10) {
+				setViewSection(prev => prev + 1);
+			}
+		}
+	};
+
+	const swipeHandlers = useSwipeable({
+		onSwipedLeft: handleSwipeLeft,
+		preventDefaultTouchmoveEvent: true,
+		trackMouse: true, // Чтобы отслеживать движения мыши для тестирования на десктопе
+	});
+	///
+
 	// console.log(isViewContact, isScale, isViewContainer, isViewCareer);
 	return (
 		<section
 			className={styles.section}
 			// onClick={() => moveSection(setViewSection)}
-			onWheel={handleWheel}
+			onWheel={width <= 767.98 ? undefined : handleWheel}
+			{...swipeHandlers}
 		>
 			<motion.div
 				className={styles.bg_for_contacts}
