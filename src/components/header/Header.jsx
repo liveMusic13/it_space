@@ -12,7 +12,7 @@ const Header = ({ viewSection }) => {
 	return (
 		<header className={styles.header}>
 			<img src={srcImage} alt='logo' />
-			<Button />
+			<Button>СВЯЗАТЬСЯ С НАМИ</Button>
 		</header>
 	);
 };

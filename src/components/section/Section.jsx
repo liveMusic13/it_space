@@ -39,6 +39,8 @@ const Section = ({ viewSection, setViewSection, states }) => {
 		setIsViewCareer,
 		isAnimPlanet,
 		setIsAnimPlanet,
+		isVieBackOpacity,
+		setIsVieBackOpacity,
 	} = states;
 
 	const { width } = useWindowDimensions();
@@ -282,7 +284,12 @@ const Section = ({ viewSection, setViewSection, states }) => {
 
 			<ServicesPage animServices={animServices} />
 			<Contacts animContacts={animContacts} />
-			<Career animCareer={animCareer} viewSection={viewSection} />
+			<Career
+				animCareer={animCareer}
+				viewSection={viewSection}
+				isVieBackOpacity={isVieBackOpacity}
+				setIsVieBackOpacity={setIsVieBackOpacity}
+			/>
 		</section>
 	);
 };

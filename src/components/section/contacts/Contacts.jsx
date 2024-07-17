@@ -118,7 +118,7 @@ const Contacts = ({ animContacts }) => {
 							нажимая на кнопку вы соглашаетесь на обработку{' '}
 							<span>персональных данных</span>
 						</p>
-						<Button />
+						<Button>СВЯЗАТЬСЯ С НАМИ</Button>
 					</div>
 				</div>
 			</div>

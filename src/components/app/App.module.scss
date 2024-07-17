@@ -1,6 +1,186 @@
 @import '../../styles/functions';
+@import '../../styles/variables';
 
 .wrapper {
 	position: relative;
 	height: 100%;
+}
+
+.block__shadow_form {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 40;
+	background-color: rgba($color: $color_black, $alpha: 0.5);
+}
+
+/////
+
+.block__form {
+	position: absolute;
+	top: 20%;
+	left: 33%;
+	z-index: 60;
+	display: flex;
+	flex-direction: column;
+	gap: adapt(25px, 1920px);
+	background-color: $color_black;
+	width: adapt(650px, 1920px);
+	height: adapt(588px, 1920px);
+	padding: adapt(45px, 1920px) adapt(70px, 1920px) adapt(45px, 1920px)
+		adapt(50px, 1920px);
+
+	@media (max-width: 767.98px) {
+		padding: adapt(55px, 375px) adapt(15px, 375px);
+		width: 100%;
+		height: auto;
+		left: 0%;
+		top: 12%;
+		// margin-bottom: adapt(495px, 375px);
+	}
+}
+
+.form__title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width: 767.98px) {
+		position: relative;
+	}
+
+	> .title {
+		font-family: 'Neopixel';
+		font-size: 1.55rem;
+		color: $color_white;
+
+		@media (max-width: 767.98px) {
+			font-size: 2rem;
+			margin-bottom: adapt(30px, 375px);
+		}
+	}
+
+	> .button__exit {
+		width: adapt(24px, 1920px);
+		height: adapt(24px, 1920px);
+		background-color: transparent;
+
+		@media (max-width: 767.98px) {
+			width: adapt(24px, 375px);
+			height: adapt(24px, 375px);
+			position: absolute;
+			top: -35%;
+			right: 0;
+		}
+		> .socials {
+			width: adapt(24px, 1920px);
+			height: adapt(24px, 1920px);
+
+			@media (max-width: 767.98px) {
+				width: adapt(24px, 375px);
+				height: adapt(24px, 375px);
+			}
+		}
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: adapt(10px, 1920px);
+
+	@media (max-width: 767.98px) {
+		gap: adapt(10px, 375px);
+	}
+
+	> .block__input {
+		position: relative;
+		color: $color_white;
+		background-image: url('/assets/images/back_fon_vacan.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: adapt(530px, 1920px);
+		height: adapt(80px, 1920px);
+		display: flex;
+		flex-direction: column;
+		gap: adapt(10px, 1920px);
+		padding: adapt(15px, 1920px) adapt(20px, 1920px);
+
+		@media (max-width: 767.98px) {
+			gap: adapt(12px, 375px);
+			padding: adapt(15px, 375px) adapt(20px, 375px);
+			width: adapt(344px, 375px);
+			height: adapt(80px, 375px);
+		}
+
+		&:hover {
+			background-image: url('/assets/images/back_fon_vacan__hover.png');
+		}
+
+		> .block__select {
+			font-family: 'stolzl_regular';
+			font-size: 1rem;
+			width: 100%;
+			height: adapt(29px, 1920px);
+			background-color: rgba($color: $color_white, $alpha: 0.1);
+			color: rgba($color: $color_white, $alpha: 0.3);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: relative;
+
+			@media (max-width: 767.98px) {
+				height: adapt(24px, 375px);
+			}
+
+			> .add__file {
+				position: absolute;
+				right: 0;
+				opacity: 0;
+			}
+
+			> .add__file_image {
+			}
+		}
+
+		> label {
+			font-family: 'Neopixel';
+			font-size: 0.88rem;
+
+			@media (max-width: 767.98px) {
+				font-size: 1rem;
+			}
+		}
+		> input {
+			font-family: 'stolzl_regular';
+			font-size: 1rem;
+			width: adapt(270px, 1920px);
+			height: adapt(29px, 1920px);
+			background-color: rgba($color: $color_white, $alpha: 0.1);
+			outline: none;
+			color: $color_white;
+
+			@media (max-width: 767.98px) {
+				width: adapt(270px, 375px);
+				height: adapt(24px, 375px);
+			}
+		}
+	}
+}
+
+.block__button {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 100%;
+
+	@media (max-width: 767.98px) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: adapt(32px, 375px);
+		margin-top: adapt(20px, 375px);
+	}
 }

@@ -1,9 +1,14 @@
 import styles from './Button.module.scss';
 
-const Button = ({ hover }) => {
+const Button = ({ hover, setIsVieBackOpacity, children, send }) => {
 	return (
-		<button className={hover ? styles.button_sun : styles.button}>
-			СВЗЯТЬСЯ С НАМИ{' '}
+		<button
+			className={hover ? styles.button_sun : styles.button}
+			onClick={() => (hover ? setIsVieBackOpacity(true) : undefined)}
+			style={send ? { width: '100%' } : {}}
+		>
+			{/* {vacancies ? 'Отправить' : 'СВЯЗАТЬСЯ С НАМИ'} */}
+			{children}
 			<img
 				src={
 					hover

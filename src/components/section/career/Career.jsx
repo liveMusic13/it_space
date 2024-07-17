@@ -5,7 +5,12 @@ import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import Button from '../../ui/button/Button';
 import styles from './Career.module.scss';
 
-const Career = ({ animCareer, viewSection }) => {
+const Career = ({
+	animCareer,
+	viewSection,
+	isVieBackOpacity,
+	setIsVieBackOpacity,
+}) => {
 	const { width } = useWindowDimensions();
 	const { isAnim, isAnim_mobile } = useCareerAnim();
 
@@ -39,7 +44,13 @@ const Career = ({ animCareer, viewSection }) => {
 								<h3 className={styles.price}>{vacancies.price}</h3>
 								<p className={styles.description}>{vacancies.description}</p>
 							</div>
-							<Button hover={true} />
+							<Button
+								hover={true}
+								setIsVieBackOpacity={setIsVieBackOpacity}
+								vacancies={true}
+							>
+								СВЯЗАТЬСЯ С НАМИ
+							</Button>
 							<div className={styles.block__dotted}></div>
 						</div>
 					))}
@@ -71,7 +82,10 @@ const Career = ({ animCareer, viewSection }) => {
 								<h3 className={styles.price}>{vacancies.price}</h3>
 								<p className={styles.description}>{vacancies.description}</p>
 							</div>
-							<Button hover={true} />
+
+							<Button hover={true} setIsVieBackOpacity={setIsVieBackOpacity}>
+								СВЯЗАТЬСЯ С НАМИ
+							</Button>
 							<div className={styles.block__dotted}></div>
 						</div>
 					))}
