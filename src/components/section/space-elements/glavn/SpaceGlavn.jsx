@@ -1,120 +1,68 @@
 import { motion } from 'framer-motion';
+import { useGlavnAnim } from '../../../../hooks/useGlavnAnim';
+import useWindowDimensions from '../../../../hooks/useWindowDimensions';
 import styles from './SpaceGlavn.module.scss';
 
-const SpaceGlavn = ({ isAnimGlavn, animProjects }) => {
-	const isAnim = (isAnimGlavn, forAnim, forObject, animProjects) => {
-		if (forObject === 'left') {
-			if (forAnim === 'initial') {
-				return { top: 0, left: 0 };
-			} else if (forAnim === 'animate') {
-				return isAnimGlavn ? { top: '-100vh', left: 0 } : {};
-			}
-		} else if (forObject === 'right') {
-			if (forAnim === 'initial') {
-				return {
-					bottom: '24.4%',
-					right: '1%',
-					transform: animProjects.size_on ? 'scale(1.28)' : 'scale(1)',
-				};
-			} else if (forAnim === 'animate') {
-				return animProjects.size_on
-					? {
-							top: '-5.5%',
-							right: '-12%',
-							transform: animProjects.size_on ? 'scale(1.28)' : 'scale(1)',
-					  }
-					: isAnimGlavn
-					? {
-							top: '5.5%',
-							right: '1%',
-							transform: animProjects.size_on ? 'scale(1.28)' : 'scale(1)',
-					  }
-					: {};
-			}
-		} else if (forObject === 'comet') {
-			if (forAnim === 'initial') {
-				return {};
-			} else if (forAnim === 'animate') {
-				return isAnimGlavn ? { top: '-100vh', left: 0 } : {};
-			}
-		} else if (forObject === 'block__title') {
-			if (forAnim === 'initial') {
-				return { top: '26.5%', left: 0 };
-			} else if (forAnim === 'animate') {
-				return isAnimGlavn ? { top: '-100vh', left: 0 } : {};
-			}
-		} else if (forObject === 'title__image') {
-			if (forAnim === 'initial') {
-				return { top: '27%', left: '16.5%' };
-			} else if (forAnim === 'animate') {
-				return isAnimGlavn ? { top: '-100vh', left: '16.5%' } : {};
-			}
-		} else if (forObject === 'block__paragraph') {
-			if (forAnim === 'initial') {
-				return { top: '65%', left: '27.5%' };
-			} else if (forAnim === 'animate') {
-				return isAnimGlavn ? { top: '-100vh', left: '27.5%' } : {};
-			}
-		}
-	};
+const SpaceGlavn = ({ isAnimGlavn, animProjects, viewSection }) => {
+	const { width } = useWindowDimensions();
+	const { isAnim, isAnimMiniComet, isAnim_mobile, isAnimMiniComet_mobile } =
+		useGlavnAnim();
 
-	const isAnimMiniComet = (animProjects, forAnim, forObject) => {
-		if (forObject === 'mini_comet_blue') {
-			if (forAnim === 'initial') {
-				return {
-					transform: 'scale(1)',
-					right: 'calc(0/1920*100vw)',
-					bottom: 'calc(80/1920*100vw)',
-				};
-			} else if (forAnim === 'animate') {
-				return animProjects.size_on
-					? {
-							transform: 'scale(1.28)',
-							right: 'calc(-200/1920*100vw)',
-							bottom: 'calc(0/1920*100vw)',
-					  }
-					: {};
-			}
-		} else if (forObject === 'mini_comet_red') {
-			if (forAnim === 'initial') {
-				return {
-					transform: 'scale(1)',
-					right: 'calc(0/1920*100vw)',
-					bottom: 'calc(80/1920*100vw)',
-				};
-			} else if (forAnim === 'animate') {
-				return animProjects.size_on
-					? {
-							transform: 'scale(1.28)',
-							right: 'calc(-170/1920*100vw)',
-							bottom: 'calc(-45/1920*100vw)',
-					  }
-					: {};
-			}
-		}
-	};
-
+	// console.log(width <= 767.98);
 	return (
 		<>
 			<motion.img
 				className={`${styles.planet_img} ${styles.left}`}
 				src='/assets/images/space/left_planet.png'
 				alt='planet'
-				initial={isAnim(isAnimGlavn, 'initial', 'left')}
-				animate={isAnim(isAnimGlavn, 'animate', 'left')}
+				// initial={isAnim(isAnimGlavn, 'initial', 'left')}
+				// animate={isAnim(isAnimGlavn, 'animate', 'left')}
+				initial={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'initial', 'left')
+						: isAnim(isAnimGlavn, 'initial', 'left')
+				}
+				animate={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'animate', 'left')
+						: isAnim(isAnimGlavn, 'animate', 'left')
+				}
 				transition={{ duration: 2 }}
 			/>
 			<motion.img
 				className={`${styles.planet_img} ${styles.right}`}
 				src='/assets/images/space/right_planet.png'
 				alt='planet'
-				initial={isAnim(isAnimGlavn, 'initial', 'right', animProjects)}
-				animate={isAnim(isAnimGlavn, 'animate', 'right', animProjects)}
+				// initial={isAnim(isAnimGlavn, 'initial', 'right', animProjects)}
+				// animate={isAnim(isAnimGlavn, 'animate', 'right', animProjects)}
+				initial={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'initial', 'right', animProjects)
+						: isAnim(isAnimGlavn, 'initial', 'right', animProjects)
+				}
+				animate={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'animate', 'right', animProjects)
+						: isAnim(isAnimGlavn, 'animate', 'right', animProjects)
+				}
+				// initial={choiceAnim(isAnimGlavn, 'initial', 'right', animProjects)}
+				// animate={choiceAnim(isAnimGlavn, 'animate', 'right', animProjects)}
 				transition={{ duration: 2 }}
+				style={
+					(viewSection === 1 && width <= 767.98) ||
+					(viewSection === 99 && width <= 767.98) ||
+					(viewSection === 100 && width) <= 767.98
+						? { display: 'none' }
+						: {}
+				}
 			/>
 			<motion.img
 				className={styles.comet}
-				src='/assets/images/space/comet.png'
+				src={
+					width <= 767.98
+						? '/assets/images/space/comet__mobile.png'
+						: '/assets/images/space/comet.png'
+				}
 				alt='comet'
 				// initial={{ top: 0, left: 0 }}
 				animate={isAnim(isAnimGlavn, 'animate', 'comet')}
@@ -124,36 +72,76 @@ const SpaceGlavn = ({ isAnimGlavn, animProjects }) => {
 				className={styles.mini_comet_blue}
 				src='/assets/images/space/mini_comet_blue.png'
 				alt='mini_comet_blue'
-				initial={isAnimMiniComet(animProjects, 'initial', 'mini_comet_blue')}
-				animate={isAnimMiniComet(animProjects, 'animate', 'mini_comet_blue')}
+				initial={
+					width <= 767.98
+						? isAnimMiniComet_mobile(animProjects, 'initial', 'mini_comet_blue')
+						: isAnimMiniComet(animProjects, 'initial', 'mini_comet_blue')
+				}
+				animate={
+					width <= 767.98
+						? isAnimMiniComet_mobile(animProjects, 'animate', 'mini_comet_blue')
+						: isAnimMiniComet(animProjects, 'animate', 'mini_comet_blue')
+				}
 				transition={{ duration: 2 }}
 			/>
 			<motion.img
 				className={styles.mini_comet_red}
 				src='/assets/images/space/mini_comet_red.png'
 				alt='mini_comet_red'
-				initial={isAnimMiniComet(animProjects, 'initial', 'mini_comet_red')}
-				animate={isAnimMiniComet(animProjects, 'animate', 'mini_comet_red')}
+				initial={
+					width <= 767.98
+						? isAnimMiniComet_mobile(animProjects, 'initial', 'mini_comet_red')
+						: isAnimMiniComet(animProjects, 'initial', 'mini_comet_red')
+				}
+				animate={
+					width <= 767.98
+						? isAnimMiniComet_mobile(animProjects, 'animate', 'mini_comet_red')
+						: isAnimMiniComet(animProjects, 'animate', 'mini_comet_red')
+				}
 				transition={{ duration: 2 }}
 			/>
 			<motion.div
 				className={styles.block__title}
-				initial={isAnim(isAnimGlavn, 'initial', 'block__title')}
-				animate={isAnim(isAnimGlavn, 'animate', 'block__title')}
+				initial={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'initial', 'block__title')
+						: isAnim(isAnimGlavn, 'initial', 'block__title')
+				}
+				animate={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'animate', 'block__title')
+						: isAnim(isAnimGlavn, 'animate', 'block__title')
+				}
 				transition={{ duration: 4 }}
 			></motion.div>
 			<motion.img
 				className={styles.title__image}
 				src='/assets/images/h1/glavn.png'
 				alt='glavn'
-				initial={isAnim(isAnimGlavn, 'initial', 'title__image')}
-				animate={isAnim(isAnimGlavn, 'animate', 'title__image')}
+				initial={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'initial', 'title__image')
+						: isAnim(isAnimGlavn, 'initial', 'title__image')
+				}
+				animate={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'animate', 'title__image')
+						: isAnim(isAnimGlavn, 'animate', 'title__image')
+				}
 				transition={{ duration: 4 }}
 			/>
 			<motion.div
 				className={styles.block__paragraph}
-				initial={isAnim(isAnimGlavn, 'initial', 'block__paragraph')}
-				animate={isAnim(isAnimGlavn, 'animate', 'block__paragraph')}
+				initial={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'initial', 'block__paragraph')
+						: isAnim(isAnimGlavn, 'initial', 'block__paragraph')
+				}
+				animate={
+					width <= 767.98
+						? isAnim_mobile(isAnimGlavn, 'animate', 'block__paragraph')
+						: isAnim(isAnimGlavn, 'animate', 'block__paragraph')
+				}
 				transition={{ duration: 6 }}
 			>
 				<p className={styles.paragraph}>Design</p>

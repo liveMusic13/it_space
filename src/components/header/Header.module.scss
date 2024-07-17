@@ -9,4 +9,20 @@
 	z-index: 10;
 	width: 100%;
 	padding: adapt(42px, 1920px) adapt(70px, 1920px) 0px;
+
+	> img {
+		width: adapt(99.41px, 1920px);
+		height: adapt(50px, 1920px);
+		margin-left: adapt(10px, 1920px);
+
+		@media (max-width: 767.98px) {
+			width: adapt(76px, 375px);
+			height: adapt(38.23px, 375px);
+			margin-left: adapt(10px, 375px);
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		top: 2%;
+	}
 }

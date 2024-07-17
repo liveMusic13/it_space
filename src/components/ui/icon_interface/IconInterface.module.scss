@@ -4,4 +4,10 @@
 	margin-left: adapt(60px, 1920px);
 	width: adapt(24px, 1920px);
 	height: adapt(24px, 1920px);
+
+	@media (max-width: 767.98px) {
+		width: adapt(24px, 375px);
+		height: adapt(24px, 375px);
+		margin-left: adapt(20px, 375px);
+	}
 }

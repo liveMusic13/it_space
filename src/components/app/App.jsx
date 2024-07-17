@@ -36,6 +36,10 @@ const App = () => {
 	const [isScale, setIsScale] = useState(false);
 	const [isScaleProjects, setIsScaleProjects] = useState(false);
 	const [isViewContainer, setIsViewContainer] = useState(false);
+	const [isViewContact, setIsViewContact] = useState(false);
+	const [isViewCareer, setIsViewCareer] = useState(false);
+
+	const [isAnimPlanet, setIsAnimPlanet] = useState(false);
 
 	return (
 		<div className={styles.wrapper}>
@@ -63,6 +67,12 @@ const App = () => {
 					setIsScaleProjects,
 					isViewContainer,
 					setIsViewContainer,
+					isViewContact,
+					setIsViewContact,
+					isViewCareer,
+					setIsViewCareer,
+					isAnimPlanet,
+					setIsAnimPlanet,
 				}}
 			/>
 
@@ -89,6 +99,10 @@ const App = () => {
 					setIsScaleProjects,
 					isViewContainer,
 					setIsViewContainer,
+					isViewContact,
+					setIsViewContact,
+					isViewCareer,
+					setIsViewCareer,
 				}}
 			/>
 			<InterfaceMenu
@@ -114,6 +128,10 @@ const App = () => {
 					setIsScaleProjects,
 					isViewContainer,
 					setIsViewContainer,
+					isViewContact,
+					setIsViewContact,
+					isViewCareer,
+					setIsViewCareer,
 				}}
 			/>
 		</div>

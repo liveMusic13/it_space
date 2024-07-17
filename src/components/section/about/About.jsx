@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { arrayPeople } from '../../../data/about.data';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import styles from './About.module.scss';
 
 const About = ({ isAnim, animAbout }) => {
+	const { width } = useWindowDimensions();
 	const [isMouseEnter, setIsMouseEnter] = useState(false);
 	const [targetPeople, setTargetPeople] = useState(null);
 
@@ -12,79 +14,160 @@ const About = ({ isAnim, animAbout }) => {
 			? {
 					zIndex: '11',
 					left: 'calc(5/1920*100vw)',
-					width: size ? 'calc(110/1920*100vw)' : 'calc(90/1920*100vw)',
+					width:
+						width <= 767.98
+							? size
+								? 'calc(62/375*100vw)'
+								: 'calc(52/375*100vw)'
+							: size
+							? 'calc(110/1920*100vw)'
+							: 'calc(90/1920*100vw)',
 			  }
 			: people.id === 1
 			? {
 					zIndex: '10',
 					left: 'calc(75/1920*100vw)',
-					width: size ? 'calc(110/1920*100vw)' : 'calc(90/1920*100vw)',
+					width:
+						width <= 767.98
+							? size
+								? 'calc(62/375*100vw)'
+								: 'calc(52/375*100vw)'
+							: size
+							? 'calc(110/1920*100vw)'
+							: 'calc(90/1920*100vw)',
 			  }
 			: people.id === 2
 			? {
 					zIndex: '9',
 					left: 'calc(150/1920*100vw)',
-					width: size ? 'calc(110/1920*100vw)' : 'calc(90/1920*100vw)',
+					width:
+						width <= 767.98
+							? size
+								? 'calc(62/375*100vw)'
+								: 'calc(52/375*100vw)'
+							: size
+							? 'calc(110/1920*100vw)'
+							: 'calc(90/1920*100vw)',
 			  }
 			: people.id === 3
 			? {
 					zIndex: '8',
 					left: 'calc(225/1920*100vw)',
-					width: size ? 'calc(110/1920*100vw)' : 'calc(90/1920*100vw)',
+					width:
+						width <= 767.98
+							? size
+								? 'calc(62/375*100vw)'
+								: 'calc(52/375*100vw)'
+							: size
+							? 'calc(110/1920*100vw)'
+							: 'calc(90/1920*100vw)',
 			  }
 			: people.id === 4
 			? {
 					zIndex: '9',
 					left: 'calc(300/1920*100vw)',
-					width: size ? 'calc(110/1920*100vw)' : 'calc(90/1920*100vw)',
+					width:
+						width <= 767.98
+							? size
+								? 'calc(62/375*100vw)'
+								: 'calc(52/375*100vw)'
+							: size
+							? 'calc(110/1920*100vw)'
+							: 'calc(90/1920*100vw)',
 			  }
 			: {
 					zIndex: '8',
 					left: 'calc(375/1920*100vw)',
-					width: size ? 'calc(110/1920*100vw)' : 'calc(90/1920*100vw)',
+					width:
+						width <= 767.98
+							? size
+								? 'calc(62/375*100vw)'
+								: 'calc(52/375*100vw)'
+							: size
+							? 'calc(110/1920*100vw)'
+							: 'calc(90/1920*100vw)',
 			  };
 	};
 
 	const left = people => {
 		return people.id === 0
 			? {
+					display: width <= 767.98 && people.id === 5 ? 'none' : 'block',
 					position: 'absolute',
-					left: 'calc(5/1920*100vw)',
-					top: isMouseEnter && people.id === targetPeople ? '-20%' : '4.5%',
+					left: width <= 767.98 ? 'calc(5/375*100vw)' : 'calc(5/1920*100vw)',
+					top:
+						isMouseEnter && people.id === targetPeople
+							? '-20%'
+							: width <= 767.98
+							? '9%'
+							: '4.5%',
 					zIndex: isMouseEnter && people.id === targetPeople ? '11' : undefined,
 			  }
 			: people.id === 1
 			? {
+					display: width <= 767.98 && people.id === 5 ? 'none' : 'block',
 					position: 'absolute',
-					left: 'calc(75/1920*100vw)',
-					top: isMouseEnter && people.id === targetPeople ? '-20%' : '4.5%',
+					left: width <= 767.98 ? 'calc(45/375*100vw)' : 'calc(75/1920*100vw)',
+					top:
+						isMouseEnter && people.id === targetPeople
+							? '-20%'
+							: width <= 767.98
+							? '9%'
+							: '4.5%',
 					zIndex: isMouseEnter && people.id === targetPeople ? '11' : undefined,
 			  }
 			: people.id === 2
 			? {
+					display: width <= 767.98 && people.id === 5 ? 'none' : 'block',
 					position: 'absolute',
-					left: 'calc(150/1920*100vw)',
-					top: isMouseEnter && people.id === targetPeople ? '-20%' : '4.5%',
+					left: width <= 767.98 ? 'calc(85/375*100vw)' : 'calc(150/1920*100vw)',
+					top:
+						isMouseEnter && people.id === targetPeople
+							? '-20%'
+							: width <= 767.98
+							? '9%'
+							: '4.5%',
 					zIndex: isMouseEnter && people.id === targetPeople ? '11' : undefined,
 			  }
 			: people.id === 3
 			? {
+					display: width <= 767.98 && people.id === 5 ? 'none' : 'block',
 					position: 'absolute',
-					left: 'calc(225/1920*100vw)',
-					top: isMouseEnter && people.id === targetPeople ? '-20%' : '4.5%',
+					left:
+						width <= 767.98 ? 'calc(125/375*100vw)' : 'calc(225/1920*100vw)',
+					top:
+						isMouseEnter && people.id === targetPeople
+							? '-20%'
+							: width <= 767.98
+							? '9%'
+							: '4.5%',
 					zIndex: isMouseEnter && people.id === targetPeople ? '11' : undefined,
 			  }
 			: people.id === 4
 			? {
+					display: width <= 767.98 && people.id === 5 ? 'none' : 'block',
 					position: 'absolute',
-					left: 'calc(300/1920*100vw)',
-					top: isMouseEnter && people.id === targetPeople ? '-20%' : '4.5%',
+					left:
+						width <= 767.98 ? 'calc(165/375*100vw)' : 'calc(300/1920*100vw)',
+					top:
+						isMouseEnter && people.id === targetPeople
+							? '-20%'
+							: width <= 767.98
+							? '9%'
+							: '4.5%',
 					zIndex: isMouseEnter && people.id === targetPeople ? '11' : undefined,
 			  }
 			: {
+					display: width <= 767.98 && people.id === 5 ? 'none' : 'block',
 					position: 'absolute',
-					left: 'calc(375/1920*100vw)',
-					top: isMouseEnter && people.id === targetPeople ? '-20%' : '4.5%',
+					left:
+						width <= 767.98 ? 'calc(2055/375*100vw)' : 'calc(375/1920*100vw)',
+					top:
+						isMouseEnter && people.id === targetPeople
+							? '-20%'
+							: width <= 767.98
+							? '9%'
+							: '4.5%',
 					zIndex: isMouseEnter && people.id === targetPeople ? '11' : undefined,
 			  };
 	};
@@ -104,7 +187,7 @@ const About = ({ isAnim, animAbout }) => {
 			animate={isAnim(animAbout, 'animate')}
 			transition={isAnim(animAbout, 'transition')}
 		>
-			<div className={styles.block__border}></div>
+			{width <= 767.98 ? <></> : <div className={styles.block__border}></div>}
 			<div className={styles.block__content}>
 				<div className={styles.block__title}>
 					<img

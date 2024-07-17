@@ -27,7 +27,7 @@ export const arrayPeople = [
 		id: 4,
 		position: 'CEO Компании',
 		name: '4Евгений Закройский',
-		src: '/assets/images/about_people/5.svg',
+		src: '/assets/images/about_people/5.png',
 	},
 	{
 		id: 5,

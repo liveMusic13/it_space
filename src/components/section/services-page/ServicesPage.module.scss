@@ -2,6 +2,103 @@
 @import '../../../styles/functions';
 @import '../../../styles/fonts';
 
+// .block__services {
+// 	position: absolute;
+// 	top: adapt(135px, 1920px);
+// 	left: adapt(70px, 1920px);
+// 	z-index: 1;
+// 	color: $color_black;
+// 	width: adapt(1780px, 1920px);
+// 	height: adapt(670px, 1920px);
+// 	display: flex;
+// 	flex-direction: column;
+// 	gap: adapt(50px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		gap: adapt(30px, 375px);
+// 	}
+// }
+
+// .service {
+// 	// max-height: adapt(204px, 1920px);
+// }
+
+// .title {
+// 	font-size: 12.22rem;
+// 	font-family: 'Neopixel';
+// 	// max-height: adapt(154px, 1920px);
+// 	margin-top: adapt(-67px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		font-size: 3.71rem;
+// 	}
+
+// 	&:hover {
+// 		background: linear-gradient(
+// 			105deg,
+// 			rgb(143, 255, 235) 6.3%,
+// 			rgb(36, 122, 252) 10%,
+// 			rgb(0, 0, 0) 20%
+// 		);
+// 		// background-image: url('/public/assets/images/space/comet.png');
+// 		// background-size: contain;
+// 		-webkit-background-clip: text;
+// 		background-clip: text;
+// 		color: transparent;
+// 	}
+// }
+
+// .block__content {
+// 	display: flex;
+// 	align-items: center;
+// 	gap: adapt(40px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		flex-direction: column;
+// 		align-items: flex-start;
+// 		padding-bottom: adapt(30px, 375px);
+// 		// gap: adapt(30px, 375px);
+// 	}
+// }
+
+// .menu {
+// 	max-width: adapt(874px, 1920px);
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	gap: adapt(90px, 1920px);
+// 	row-gap: adapt(10px, 1920px);
+// 	text-transform: uppercase;
+
+// 	@media (max-width: 375.98px) {
+// 		gap: adapt(10px, 375px);
+// 		max-width: 80%;
+// 		flex-wrap: nowrap;
+// 		flex-direction: column;
+// 	}
+// }
+
+// .list {
+// 	font-family: 'Stolzl-Book';
+// 	font-size: 2.44rem;
+
+// 	@media (max-width: 375.98px) {
+// 		font-size: 1.71rem;
+// 	}
+
+// 	// &:last-child {
+// 	// 	margin-left: adapt(75px, 1920px);
+// 	// }
+// }
+
+// .block__dotted {
+// 	background-image: url('/assets/images/bg_dotted.png');
+// 	background-position: left;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	width: 100%;
+// 	height: 4px;
+// }
+
 .block__services {
 	position: absolute;
 	top: adapt(135px, 1920px);
@@ -13,17 +110,23 @@
 	display: flex;
 	flex-direction: column;
 	gap: adapt(50px, 1920px);
+
+	@media (max-width: 767.98px) {
+		gap: adapt(30px, 375px);
+	}
 }
 
 .service {
-	// max-height: adapt(204px, 1920px);
 }
 
 .title {
 	font-size: 12.22rem;
 	font-family: 'Neopixel';
-	// max-height: adapt(154px, 1920px);
 	margin-top: adapt(-67px, 1920px);
+
+	@media (max-width: 767.98px) {
+		font-size: 3.71rem;
+	}
 
 	&:hover {
 		background: linear-gradient(
@@ -32,8 +135,6 @@
 			rgb(36, 122, 252) 10%,
 			rgb(0, 0, 0) 20%
 		);
-		// background-image: url('/public/assets/images/space/comet.png');
-		// background-size: contain;
 		-webkit-background-clip: text;
 		background-clip: text;
 		color: transparent;
@@ -44,6 +145,12 @@
 	display: flex;
 	align-items: center;
 	gap: adapt(40px, 1920px);
+
+	@media (max-width: 767.98px) {
+		flex-direction: column;
+		align-items: flex-start;
+		padding-bottom: adapt(30px, 375px);
+	}
 }
 
 .menu {
@@ -52,15 +159,23 @@
 	flex-wrap: wrap;
 	gap: adapt(90px, 1920px);
 	row-gap: adapt(10px, 1920px);
+	text-transform: uppercase;
+
+	@media (max-width: 767.98px) {
+		gap: adapt(10px, 375px);
+		max-width: 80%;
+		flex-wrap: nowrap;
+		flex-direction: column;
+	}
 }
 
 .list {
 	font-family: 'Stolzl-Book';
 	font-size: 2.44rem;
 
-	// &:last-child {
-	// 	margin-left: adapt(75px, 1920px);
-	// }
+	@media (max-width: 767.98px) {
+		font-size: 1.71rem;
+	}
 }
 
 .block__dotted {

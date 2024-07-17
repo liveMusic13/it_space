@@ -1,11 +1,16 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { arrayServices } from '../../../data/services.data';
+import { useServicesAnim } from '../../../hooks/useServicesAnim';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import styles from './ServicesPage.module.scss';
 
 const ServicesPage = ({ animServices }) => {
+	const { isAnim, isAnim_mobile } = useServicesAnim();
+
 	const [isMouseEnter, setIsMouseEnter] = useState(false);
 	const [isMouseEnterGreen, setIsMouseEnterGreen] = useState(false);
+	const { width } = useWindowDimensions();
 
 	const handleMouseEnter = id => {
 		if (id === 5) {
@@ -22,28 +27,19 @@ const ServicesPage = ({ animServices }) => {
 		}
 	};
 
-	const isAnim = (animServices, forAnim) => {
-		if (forAnim === 'initial') {
-			// if (animServices.off) {
-			// 	return { top: 'calc(135/1920*100vw)' };
-			// } else {
-			// 	return { top: '-100vh' };
-			// }
-			return { top: '-100vh' };
-		} else if (forAnim === 'animate') {
-			if (animServices.on) {
-				return { top: 'calc(135/1920*100vw)' };
-			} else if (animServices.off) {
-				return { top: '-100vh' };
-			}
-		}
-	};
-
 	return (
 		<motion.div
 			className={styles.block__services}
-			initial={isAnim(animServices, 'initial')}
-			animate={isAnim(animServices, 'animate')}
+			initial={
+				width <= 767.98
+					? isAnim_mobile(animServices, 'initial')
+					: isAnim(animServices, 'initial')
+			}
+			animate={
+				width <= 767.98
+					? isAnim_mobile(animServices, 'animate')
+					: isAnim(animServices, 'animate')
+			}
 			transition={{ duration: 2 }}
 		>
 			{arrayServices.map(service => (
@@ -79,7 +75,11 @@ const ServicesPage = ({ animServices }) => {
 									key={list.id}
 									className={styles.list}
 									style={
-										list.id === 4 ? { marginLeft: 'calc(75/1920*100vw)' } : {}
+										!(width <= 767.98)
+											? list.id === 4
+												? { marginLeft: 'calc(75/1920*100vw)' }
+												: {}
+											: {}
 									}
 								>
 									<img src='/assets/images/icons/list_menu.svg' alt='list' />

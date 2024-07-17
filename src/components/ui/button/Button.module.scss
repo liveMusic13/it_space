@@ -22,6 +22,11 @@
 		cursor: pointer;
 		background-image: url('/assets/images/button_orange.png');
 	}
+
+	@media (max-width: 767.98px) {
+		width: adapt(218px, 375px);
+		height: adapt(44px, 375px);
+	}
 }
 
 .button_sun {
@@ -43,5 +48,10 @@
 	&:hover {
 		cursor: pointer;
 		background-image: url('/assets/images/button_blue.png');
+	}
+
+	@media (max-width: 767.98px) {
+		width: adapt(218px, 375px);
+		height: adapt(44px, 375px);
 	}
 }

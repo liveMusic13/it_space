@@ -1,3 +1,131 @@
+// @import '../../../styles/variables';
+// @import '../../../styles/functions';
+// @import '../../../styles/fonts';
+
+// .block__career {
+// 	position: absolute;
+// 	top: 13%;
+// 	left: adapt(70px, 1920px);
+// 	z-index: 3;
+// 	width: adapt(1780px, 1920px);
+// 	height: adapt(746px, 1920px);
+// 	display: flex;
+// 	flex-direction: column;
+// 	gap: adapt(30px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		width: 100%;
+// 		height: 100%;
+// 		gap: adapt(30px, 375px);
+// 	}
+// }
+
+// .vacancies {
+// 	width: 100%;
+// 	height: adapt(343px, 1920px);
+// 	display: flex;
+// 	justify-content: space-between;
+// 	position: relative;
+
+// 	@media (max-width: 375.98px) {
+// 		font-size: 1.14rem;
+// 		flex-direction: column;
+// 		height: adapt(583px, 375px);
+// 		gap: adapt(30px, 375px);
+// 		padding-bottom: adapt(20px, 375px);
+// 	}
+// }
+
+// .block__one {
+// 	max-width: adapt(756px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		max-width: adapt(250px, 375px);
+// 	}
+
+// 	> .title {
+// 		font-family: 'Neopixel';
+// 		font-size: 4.66rem;
+// 		color: $color_black;
+// 		margin-bottom: adapt(40px, 1920px);
+
+// 		@media (max-width: 375.98px) {
+// 			font-size: 3.71rem;
+// 			margin-bottom: adapt(25px, 375px);
+// 		}
+// 	}
+
+// 	> .menu {
+// 		display: flex;
+// 		flex-wrap: wrap;
+// 		gap: adapt(60px, 1920px);
+
+// 		@media (max-width: 375.98px) {
+// 			gap: adapt(6px, 375px);
+// 			flex-wrap: nowrap;
+// 			flex-direction: column;
+// 		}
+
+// 		> .list {
+// 			font-family: 'Neopixel';
+// 			color: $color_black;
+// 			font-size: 1.55rem;
+
+// 			@media (max-width: 375.98px) {
+// 				font-size: 1.14rem;
+// 			}
+
+// 			> img {
+// 				width: adapt(28px, 1920px);
+// 				height: adapt(28px, 1920px);
+// 				margin-right: adapt(21px, 1920px);
+
+// 				@media (max-width: 375.98px) {
+// 					width: adapt(28px, 375px);
+// 					height: adapt(28px, 375px);
+// 					margin-right: adapt(8px, 375px);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// .block__two {
+// 	font-family: 'Stolzl-Book';
+// 	max-width: adapt(580px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		max-width: 100%;
+// 	}
+
+// 	> .price {
+// 		font-size: 2.44rem;
+// 		color: $color_black;
+// 		margin-bottom: adapt(27px, 1920px);
+
+// 		@media (max-width: 375.98px) {
+// 			font-size: 1.71rem;
+// 			margin-bottom: adapt(10px, 375px);
+// 		}
+// 	}
+// 	> .description {
+// 		font-size: 1rem;
+// 		color: $color_grey;
+// 	}
+// }
+
+// .block__dotted {
+// 	position: absolute;
+// 	bottom: 0;
+// 	left: 0;
+// 	background-image: url('/assets/images/bg_dotted.png');
+// 	background-position: left;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	width: 100%;
+// 	height: 4px;
+// }
+
 @import '../../../styles/variables';
 @import '../../../styles/functions';
 @import '../../../styles/fonts';
@@ -12,6 +140,14 @@
 	display: flex;
 	flex-direction: column;
 	gap: adapt(30px, 1920px);
+
+	@media (max-width: 767.98px) {
+		width: 100%;
+		height: 100%;
+		gap: adapt(30px, 375px);
+		overflow-y: scroll;
+		padding-bottom: adapt(150px, 375px);
+	}
 }
 
 .vacancies {
@@ -20,16 +156,33 @@
 	display: flex;
 	justify-content: space-between;
 	position: relative;
+
+	@media (max-width: 767.98px) {
+		font-size: 1.14rem;
+		flex-direction: column;
+		height: adapt(583px, 375px);
+		gap: adapt(30px, 375px);
+		padding-bottom: adapt(20px, 375px);
+	}
 }
 
 .block__one {
 	max-width: adapt(756px, 1920px);
+
+	@media (max-width: 767.98px) {
+		max-width: adapt(250px, 375px);
+	}
 
 	> .title {
 		font-family: 'Neopixel';
 		font-size: 4.66rem;
 		color: $color_black;
 		margin-bottom: adapt(40px, 1920px);
+
+		@media (max-width: 767.98px) {
+			font-size: 3.71rem;
+			margin-bottom: adapt(25px, 375px);
+		}
 	}
 
 	> .menu {
@@ -37,15 +190,31 @@
 		flex-wrap: wrap;
 		gap: adapt(60px, 1920px);
 
+		@media (max-width: 767.98px) {
+			gap: adapt(6px, 375px);
+			flex-wrap: nowrap;
+			flex-direction: column;
+		}
+
 		> .list {
 			font-family: 'Neopixel';
 			color: $color_black;
 			font-size: 1.55rem;
 
+			@media (max-width: 767.98px) {
+				font-size: 1.14rem;
+			}
+
 			> img {
 				width: adapt(28px, 1920px);
 				height: adapt(28px, 1920px);
 				margin-right: adapt(21px, 1920px);
+
+				@media (max-width: 767.98px) {
+					width: adapt(28px, 375px);
+					height: adapt(28px, 375px);
+					margin-right: adapt(8px, 375px);
+				}
 			}
 		}
 	}
@@ -55,10 +224,19 @@
 	font-family: 'Stolzl-Book';
 	max-width: adapt(580px, 1920px);
 
+	@media (max-width: 767.98px) {
+		max-width: 100%;
+	}
+
 	> .price {
 		font-size: 2.44rem;
 		color: $color_black;
 		margin-bottom: adapt(27px, 1920px);
+
+		@media (max-width: 767.98px) {
+			font-size: 1.71rem;
+			margin-bottom: adapt(10px, 375px);
+		}
 	}
 	> .description {
 		font-size: 1rem;

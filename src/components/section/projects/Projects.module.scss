@@ -1,11 +1,141 @@
 @import '../../../styles/functions';
 @import '../../../styles/fonts';
 
+// .block__projects {
+// 	position: absolute;
+// 	// top: 0;
+// 	left: adapt(70px, 1920px);
+// 	z-index: 9;
+
+// 	@media (max-width: 375.98px) {
+// 		left: adapt(9px, 375px);
+// 	}
+// }
+
+// .title__image {
+// 	width: adapt(1396px, 1920px);
+// 	height: adapt(330px, 1920px);
+// 	margin-top: adapt(81px, 1920px);
+// 	margin-left: adapt(190px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		margin-top: adapt(72px, 375px);
+// 		width: adapt(373px, 375px);
+// 		height: adapt(88px, 375px);
+// 		margin-left: adapt(-8px, 375px);
+// 	}
+// }
+
+// .icon__title {
+// 	width: adapt(110px, 1920px);
+// 	height: adapt(50px, 1920px);
+// 	background-color: rgba($color: #000000, $alpha: 0.15);
+// 	margin-bottom: adapt(21px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		width: adapt(78px, 375px);
+// 		height: adapt(35.45px, 375px);
+// 		margin-bottom: adapt(11px, 375px);
+// 	}
+// }
+
+// .block__links {
+// 	display: flex;
+// 	gap: adapt(20px, 1920px);
+// 	position: absolute;
+// 	top: adapt(314px, 1920px);
+// 	// top: adapt(235px, 1920px);
+// 	left: 0;
+
+// 	@media (max-width: 375.98px) {
+// 		flex-direction: column;
+// 		top: adapt(152px, 375px);
+// 		gap: adapt(10px, 375px);
+// 		padding-bottom: adapt(60px, 375px);
+// 	}
+// }
+
+// // .block__test {
+// // 	@media (max-width: 375.98px) {
+// // 		display: flex;
+// // 		gap: adapt(20px, 1920px);
+// // 		flex-direction: column;
+// // 		top: adapt(152px, 375px);
+// // 		overflow: scroll;
+// // 	}
+// // }
+
+// .block__project {
+// 	width: adapt(430px, 1920px);
+// 	height: adapt(500px, 1920px);
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: cover;
+// 	position: relative;
+// 	padding: adapt(40px, 1920px);
+
+// 	@media (max-width: 375.98px) {
+// 		width: adapt(357px, 375px);
+// 		height: adapt(212px, 375px);
+// 		padding: adapt(16px, 375px);
+// 	}
+// }
+
+// .arrow {
+// 	position: absolute;
+// 	top: 0;
+// 	right: 0;
+// 	width: adapt(70px, 1920px);
+// 	height: adapt(70px, 1920px);
+// 	background-image: url('/assets/images/icons/arrow_top_right.svg');
+// 	background-position: center;
+// 	background-repeat: no-repeat;
+// 	background-size: contain;
+
+// 	@media (max-width: 375.98px) {
+// 		width: adapt(70px, 375px);
+// 		height: adapt(70px, 375px);
+// 	}
+
+// 	&:hover {
+// 		background-image: url('/assets/images/icons/arrow_top_right_hover.svg');
+// 	}
+
+// 	> img {
+// 		width: adapt(28px, 1920px);
+// 		height: adapt(28px, 1920px);
+// 		position: absolute;
+// 		top: 10%;
+// 		right: 10%;
+
+// 		@media (max-width: 375.98px) {
+// 			width: adapt(28px, 375px);
+// 			height: adapt(28px, 375px);
+// 		}
+// 	}
+// }
+
+// .title {
+// 	margin-bottom: adapt(154px, 1920px);
+// 	font-size: 2.44rem;
+// 	font-family: 'Stolzl-Book';
+// 	text-transform: uppercase;
+// }
+
+// .description {
+// 	font-family: 'Stolzl-Book';
+// 	font-size: 1rem;
+// }
+
 .block__projects {
 	position: absolute;
 	// top: 0;
 	left: adapt(70px, 1920px);
 	z-index: 9;
+
+	@media (max-width: 767.98px) {
+		left: adapt(9px, 375px);
+	}
 }
 
 .title__image {
@@ -13,6 +143,13 @@
 	height: adapt(330px, 1920px);
 	margin-top: adapt(81px, 1920px);
 	margin-left: adapt(190px, 1920px);
+
+	@media (max-width: 767.98px) {
+		margin-top: adapt(72px, 375px);
+		width: adapt(373px, 375px);
+		height: adapt(88px, 375px);
+		margin-left: adapt(-8px, 375px);
+	}
 }
 
 .icon__title {
@@ -20,6 +157,12 @@
 	height: adapt(50px, 1920px);
 	background-color: rgba($color: #000000, $alpha: 0.15);
 	margin-bottom: adapt(21px, 1920px);
+
+	@media (max-width: 767.98px) {
+		width: adapt(78px, 375px);
+		height: adapt(35.45px, 375px);
+		margin-bottom: adapt(11px, 375px);
+	}
 }
 
 .block__links {
@@ -27,8 +170,14 @@
 	gap: adapt(20px, 1920px);
 	position: absolute;
 	top: adapt(314px, 1920px);
-	// top: adapt(235px, 1920px);
 	left: 0;
+
+	@media (max-width: 767.98px) {
+		flex-direction: column;
+		top: adapt(152px, 375px);
+		gap: adapt(10px, 375px);
+		padding-bottom: adapt(60px, 375px);
+	}
 }
 
 .block__project {
@@ -39,6 +188,12 @@
 	background-size: cover;
 	position: relative;
 	padding: adapt(40px, 1920px);
+
+	@media (max-width: 767.98px) {
+		width: adapt(357px, 375px);
+		height: adapt(212px, 375px);
+		padding: adapt(16px, 375px);
+	}
 }
 
 .arrow {
@@ -52,6 +207,11 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 
+	@media (max-width: 767.98px) {
+		width: adapt(70px, 375px);
+		height: adapt(70px, 375px);
+	}
+
 	&:hover {
 		background-image: url('/assets/images/icons/arrow_top_right_hover.svg');
 	}
@@ -62,6 +222,11 @@
 		position: absolute;
 		top: 10%;
 		right: 10%;
+
+		@media (max-width: 767.98px) {
+			width: adapt(28px, 375px);
+			height: adapt(28px, 375px);
+		}
 	}
 }
 

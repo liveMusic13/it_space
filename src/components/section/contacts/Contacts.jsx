@@ -2,24 +2,20 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { arrayContacts } from '../../../data/contacts.data';
 import { arrayForm } from '../../../data/form.data';
+import { useContactsAnim } from '../../../hooks/useContactsAnim';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import Footer from '../../footer/Footer';
 import Button from '../../ui/button/Button';
 import styles from './Contacts.module.scss';
 
 const Contacts = ({ animContacts }) => {
+	const { width } = useWindowDimensions();
+	const { isAnim } = useContactsAnim();
+
 	const [stateOption, setStateOption] = useState(
 		arrayForm[arrayForm.length - 1].options[0]
 	);
 	const [isViewOptions, setIsViewOptions] = useState(false);
-
-	const isAnim = (animContacts, forAnim) => {
-		if (forAnim === 'initial') {
-			return { top: '-100vh', left: 0 };
-		} else if (forAnim === 'animate') {
-			if (animContacts.on) return { top: 0, left: 0 };
-			// if (animContacts.off) return { top: 0, left: '-100vw' };
-		}
-	};
 
 	return (
 		<motion.div
@@ -30,7 +26,11 @@ const Contacts = ({ animContacts }) => {
 		>
 			<img
 				className={styles.comet}
-				src='/assets/images/space/comet1080.png'
+				src={
+					!(width <= 767.98)
+						? '/assets/images/space/comet1080.png'
+						: '/assets/images/space/comet__mobile.png'
+				}
 				alt='comet'
 			/>
 			<img

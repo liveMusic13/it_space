@@ -35,6 +35,13 @@ export const useInterfaceMenuAnim = ({ shadow }) => {
 					backgroundClip: 'text',
 					color: 'transparent',
 				};
+			} else if (viewSection === 4 && idObject === 2) {
+				return {
+					background:
+						'linear-gradient(90deg,rgb(0, 0, 0) 22%,rgb(36, 122, 252) 87%,rgb(143, 255, 235))',
+					backgroundClip: 'text',
+					color: 'transparent',
+				};
 			} else if (viewSection === 6 && idObject === 3) {
 				return {
 					background:
@@ -149,6 +156,132 @@ export const useInterfaceMenuAnim = ({ shadow }) => {
 		} else if (forAnim === 'animate') {
 			return {};
 		}
+	};
+
+	const isAnimArrow_mobile = (viewSection, forAnim, forObject) => {
+		if (forObject === 'sun') {
+			if (viewSection === 1) {
+				if (forAnim === 'initial') {
+					return { opacity: 0 };
+				} else if (forAnim === 'animate') {
+					return { opacity: 1 };
+				}
+			} else if (viewSection === 3) {
+				if (forAnim === 'initial') {
+					return { left: 0 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 1 };
+				}
+			} else if (viewSection === 4) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 1 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 0 };
+				}
+			} else if (viewSection === 6) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 0 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 0 };
+				}
+			} else if (viewSection === 8) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 0 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 1 };
+				}
+			} else if (viewSection === 9) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 1 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 0 };
+				}
+			}
+		} else if (forObject === 'moon') {
+			if (viewSection === 3) {
+				if (forAnim === 'initial') {
+					return { left: '11%' };
+				} else if (forAnim === 'animate') {
+					return { left: '11%' };
+				}
+			} else if (viewSection === 4) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 0 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 1 };
+				}
+			} else if (viewSection === 6) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 1 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 1 };
+				}
+			} else if (viewSection === 8) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 1 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 0 };
+				}
+			} else if (viewSection === 9) {
+				if (forAnim === 'initial') {
+					return { left: '11%', opacity: 0 };
+				} else if (forAnim === 'animate') {
+					return { left: '11%', opacity: 1 };
+				}
+			}
+		}
+
+		if (forAnim === 'initial') {
+			return {};
+		} else if (forAnim === 'animate') {
+			return {};
+		}
+	};
+
+	const isAnimText_mobile = (viewSection, forAnim) => {
+		if (viewSection === 1) {
+			if (forAnim === 'initial') {
+				return { opacity: 0 };
+			} else if (forAnim === 'animate') {
+				return { opacity: 1 };
+			}
+		} else if (viewSection === 3) {
+			if (forAnim === 'initial') {
+				return { left: 0 };
+			} else if (forAnim === 'animate') {
+				return { left: '-4%' };
+			}
+		} else if (viewSection === 4) {
+			if (forAnim === 'initial') {
+				return { left: '-4%' };
+			} else if (forAnim === 'animate') {
+				return { left: '-4%' };
+			}
+		} else if (viewSection === 6) {
+			if (forAnim === 'initial') {
+				return { left: '-4%' };
+			} else if (forAnim === 'animate') {
+				return { left: '-19%' };
+			}
+		} else if (viewSection === 8) {
+			if (forAnim === 'initial') {
+				return { left: '-19%' };
+			} else if (forAnim === 'animate') {
+				return { left: '-35%' };
+			}
+		} else if (viewSection === 9) {
+			if (forAnim === 'initial') {
+				return { left: '-35%' };
+			} else if (forAnim === 'animate') {
+				return { left: '-50%' };
+			}
+		}
+
+		// if (forAnim === 'initial') {
+		// 	return {};
+		// } else if (forAnim === 'animate') {
+		// 	return {};
+		// }
 	};
 
 	// const isAnimText = (viewSection, forAnim, forObject, idObject) => {
@@ -284,5 +417,7 @@ export const useInterfaceMenuAnim = ({ shadow }) => {
 		isAnimArrow,
 		// isAnimText,
 		testAnim,
+		isAnimArrow_mobile,
+		isAnimText_mobile,
 	};
 };
