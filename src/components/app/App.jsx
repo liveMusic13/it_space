@@ -47,7 +47,21 @@ const App = () => {
 
 	return (
 		<div className={styles.wrapper}>
-			<Header viewSection={viewSection} />
+			<Header
+				viewSection={viewSection}
+				setViewSection={setViewSection}
+				setAnimContacts={setAnimContacts}
+				setIsAnimGlavn={setIsAnimGlavn}
+				setAnimAbout={setAnimAbout}
+				setAnimCareer={setAnimCareer}
+				setAnimProjects={setAnimProjects}
+				setAnimServices={setAnimServices}
+				setIsViewContainer={setIsViewContainer}
+				setIsViewContact={setIsViewContact}
+				setIsViewCareer={setIsViewCareer}
+				setIsScale={setIsScale}
+				setIsScaleProjects={setIsScaleProjects}
+			/>
 			{isVieBackOpacity && <div className={styles.block__shadow_form}></div>}
 			{isVieBackOpacity && (
 				<div className={styles.block__form}>
